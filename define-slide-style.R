@@ -26,11 +26,11 @@ blend_shades <- function(x, y, p = .5) {
 
 # set colors --------------------------------------------------------------
 style_duo_accent(
-  primary_color      = "#3D5B59", # teal green 
-  secondary_color    = "#1E2E2C", # dark teal green
-  header_font_google = google_font("Raleway"),
-  link_color         = choose_dark_or_light("#1E2E2C", white = "#FCB5AC"), # salmon links
-  text_font_google   = google_font("Raleway", "300", "300i"),
+  primary_color      = "#005050", # Voltron Data primary green 
+  secondary_color    = "#d9d8d6", # Voltron Data primary light grey
+  header_font_google = google_font("Roboto"),
+  link_color         = "#812570", # purple links (Voltron Data secondary colour)
+  text_font_google   = google_font("Roboto", "300", "300i"),
   code_font_google   = google_font("Fira Code"),
   text_font_size     = "30px",
   outfile            = here::here("style", "xaringan-themer.css")

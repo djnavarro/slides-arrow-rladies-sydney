@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>&gt;    ❤️  &gt;    Slide title in sentence case</title>
+    <title>Introduction to Apache Arrow</title>
     <meta charset="utf-8" />
-    <meta name="author" content="  Danielle Navarro" />
+    <meta name="author" content="Danielle Navarro" />
+    <meta name="date" content="2022-04-17" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
     <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
     <meta name="description" content="A brief description of the slides"/>
@@ -11,7 +13,7 @@
     <meta name="twitter:title" content="Slide title"/>
     <meta name="twitter:description" content="A brief description of the slides"/>
     <meta name="twitter:url" content="https://slides.djnavarro.net/SLIDES-NAME"/>
-    <meta name="twitter:image:src" content="https://slides.djnavarro.net/SLIDES-NAME/img/twitter-image.png"/>
+    <meta name="twitter:image" content="https://slides.djnavarro.net/SLIDES-NAME/img/twitter-image.png"/>
     <meta name="twitter:image:alt" content=""/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@djnavarro"/>
@@ -34,12 +36,6 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
-
-# &gt;    ❤️ <br>&gt;    Slide title in sentence case
-### <br><br><b>Danielle Navarro</b>
-
----
 
 
 &lt;!-- Note: At the outset, do a find/replace on "SLIDES-NAME" --&gt;
@@ -48,10 +44,10 @@ class: center, middle, inverse, title-slide
 
 
 layout: true
-  
+
 &lt;div class="my-footer"&gt;
 &lt;span&gt;
-  &lt;a href="https://slides.djnavarro.net" target="_blank"&gt;slides.djnavarro.net&lt;/a&gt;
+  &lt;!-- &lt;a href="https://slides.djnavarro.net" target="_blank"&gt;slides.djnavarro.net&lt;/a&gt; --&gt;
 &lt;/span&gt;
 &lt;/div&gt; 
 
@@ -63,8 +59,35 @@ layout: true
 
 
 
+class: title-slide
 
-class: middle, inverse
+background-image: url("img/voltrondata-wallpaper.png")
+background-size: cover
+
+&lt;img src="img/voltrondata-logo.png" height="50px" align="right"&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+.center[.large[.embolden[Apache Arrow for R users]]]
+.center[.midi[by Danielle Navarro]]
+
+---
+
+class: title-slide
+
+&lt;img src="img/voltrondata-logo.png" height="50px" align="right"&gt;
+
+&lt;br&gt;&lt;br&gt;
+
+&lt;img src="img/arrow-logo_hex_black-txt_white-bg.png" width="385" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: inverse
+
+&lt;img src="img/voltrondata-logo-dark.png" height="50px" align="right"&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 ## What are we going to cover?
 
@@ -75,7 +98,11 @@ class: middle, inverse
 &lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
 ---
 
-class: middle, inverse
+class: inverse
+
+&lt;img src="img/voltrondata-logo-dark.png" height="50px" align="right"&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 ## What is the assumed knowledge?
 
@@ -87,7 +114,11 @@ class: middle, inverse
 &lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
 ---
 
-class: middle, inverse
+class: inverse
+
+&lt;img src="img/voltrondata-logo-dark.png" height="50px" align="right"&gt;
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 ## Where can I find the resources?
 
@@ -109,7 +140,7 @@ class: middle
 
 class: middle, inverse
 
- .pull-left-narrow[   .huge-primary[&lt;span style='color: #ffffff'&gt;2&lt;/span&gt;] ] .pull-right-wide[    &lt;br&gt;&lt;br&gt;   &lt;div class = "larger embolden primary"&gt;&lt;span style='color: #ffffff'&gt;Another section&lt;/span&gt;&lt;/div&gt; ]
+ .pull-left-narrow[   .huge-primary[&lt;span style='color: #005050'&gt;2&lt;/span&gt;] ] .pull-right-wide[    &lt;br&gt;&lt;br&gt;   &lt;div class = "larger embolden primary"&gt;&lt;span style='color: #005050'&gt;Another section&lt;/span&gt;&lt;/div&gt; ]
 
 
 &lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
@@ -117,7 +148,7 @@ class: middle, inverse
 
 class: middle, inverse
 
- &lt;!-- background-image: url("img/faint-hearts.png") --&gt; &lt;!-- background-size: cover --&gt; .pull-left-narrow[   .huge-primary[&lt;span style='color: #ffffff'&gt;3&lt;/span&gt;] ] .pull-right-wide[    &lt;br&gt;&lt;br&gt;   &lt;div class = "larger embolden primary"&gt;&lt;span style='color: #ffffff'&gt;One last section&lt;/span&gt;&lt;/div&gt; ]
+ &lt;!-- background-image: url("img/voltrondata-wallpaper.png") --&gt; &lt;!-- background-size: cover --&gt; .pull-left-narrow[   .huge-primary[&lt;span style='color: #ffffff'&gt;3&lt;/span&gt;] ] .pull-right-wide[    &lt;br&gt;&lt;br&gt;   &lt;div class = "larger embolden primary"&gt;&lt;span style='color: #ffffff'&gt;One last section&lt;/span&gt;&lt;/div&gt; ]
 
 
 
@@ -157,7 +188,9 @@ class: middle
 background-image: url("img/faint-hearts.png")
 background-size: cover
 
-.hand[.plainwhite[... and we're done! ❤️]]
+.hand[.plainwhite[... and we're done!]]
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

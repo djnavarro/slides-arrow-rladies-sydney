@@ -15,21 +15,21 @@
  *    - xaringan wiki: https://github.com/yihui/xaringan/wiki
  *    - remarkjs wiki: https://github.com/gnab/remark/wiki
  *
- *  Version: 0.3.3
+ *  Version: 0.4.1
  *
  * ------------------------------------------------------- */
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,300i&display=swap);
-@import url(https://fonts.googleapis.com/css?family=Raleway&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,300i&display=swap);
+@import url(https://fonts.googleapis.com/css?family=Roboto&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Fira+Code&display=swap);
 
 
 :root {
   /* Fonts */
-  --text-font-family: Raleway;
+  --text-font-family: Roboto;
   --text-font-is-google: 1;
   --text-font-family-fallback: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, Ubuntu, roboto, noto, segoe ui, arial;
   --text-font-base: sans-serif;
-  --header-font-family: Raleway;
+  --header-font-family: Roboto;
   --header-font-is-google: 1;
   --header-font-family-fallback: Georgia, serif;
   --code-font-family: 'Fira Code';
@@ -44,21 +44,21 @@
 
   /* Colors */
   --text-color: #000000;
-  --header-color: #3D5B59;
+  --header-color: #005050;
   --background-color: #FFFFFF;
-  --link-color: #FCB5AC;
-  --text-bold-color: #1E2E2C;
+  --link-color: #812570;
+  --text-bold-color: #005050;
   --code-highlight-color: rgba(255,255,0,0.5);
-  --inverse-text-color: #FFFFFF;
-  --inverse-background-color: #1E2E2C;
-  --inverse-header-color: #FFFFFF;
-  --inverse-link-color: #FCB5AC;
-  --title-slide-background-color: #3D5B59;
+  --inverse-text-color: #000000;
+  --inverse-background-color: #d9d8d6;
+  --inverse-header-color: #000000;
+  --inverse-link-color: #812570;
+  --title-slide-background-color: #005050;
   --title-slide-text-color: #FFFFFF;
-  --header-background-color: #3D5B59;
+  --header-background-color: #005050;
   --header-background-text-color: #FFFFFF;
-  --primary: #3D5B59;
-  --secondary: #1E2E2C;
+  --primary: #005050;
+  --secondary: #d9d8d6;
   --white: #FFFFFF;
   --black: #000000;
 }
@@ -101,14 +101,17 @@ h1, h2, h3 {
 }
 .remark-inline-code {
   font-size: var(--code-inline-font-size);
-  color: #1E2E2C;
+  color: #005050;
 }
 .remark-slide-number {
-  color: #3D5B59;
+  color: #005050;
   opacity: 1;
-  font-size: 0.9em;
+  font-size: 0.9rem;
 }
-strong { color: var(--text-bold-color); }
+strong {
+  font-weight: bold;
+  color: var(--text-bold-color);
+}
 a, a > code {
   color: var(--link-color);
   text-decoration: none;
@@ -149,10 +152,10 @@ a, a > code {
   float: left;
 }
 .left-column h2, .left-column h3 {
-  color: #3D5B5999;
+  color: #00505099;
 }
 .left-column h2:last-of-type, .left-column h3:last-child {
-  color: #3D5B59;
+  color: #005050;
 }
 .right-column {
   width: 75%;
@@ -174,7 +177,7 @@ img, video, iframe {
   max-width: 100%;
 }
 blockquote {
-  border-left: solid 5px #1E2E2C80;
+  border-left: solid 5px #d9d8d680;
   padding-left: 1em;
 }
 .remark-slide table {
@@ -189,7 +192,7 @@ th, td {
   padding: 5px;
 }
 .remark-slide thead, .remark-slide tfoot, .remark-slide tr:nth-child(even) {
-  background: #D2D5D4;
+  background: #F7F7F6;
 }
 table.dataTable tbody {
   background-color: var(--background-color);
@@ -199,7 +202,7 @@ table.dataTable.display tbody tr.odd {
   background-color: var(--background-color);
 }
 table.dataTable.display tbody tr.even {
-  background-color: #D2D5D4;
+  background-color: #F7F7F6;
 }
 table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
   background-color: rgba(255, 255, 255, 0.5);
@@ -209,6 +212,36 @@ table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
 }
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   color: var(--text-color) !important;
+}
+
+/* Horizontal alignment of code blocks */
+.remark-slide-content.left pre,
+.remark-slide-content.center pre,
+.remark-slide-content.right pre {
+  text-align: start;
+  width: max-content;
+  max-width: 100%;
+}
+.remark-slide-content.left pre,
+.remark-slide-content.right pre {
+  min-width: 50%;
+  min-width: min(40ch, 100%);
+}
+.remark-slide-content.center pre {
+  min-width: 66%;
+  min-width: min(50ch, 100%);
+}
+.remark-slide-content.left pre {
+  margin-left: unset;
+  margin-right: auto;
+}
+.remark-slide-content.center pre {
+  margin-left: auto;
+  margin-right: auto;
+}
+.remark-slide-content.right pre {
+  margin-left: auto;
+  margin-right: unset;
 }
 
 /* Slide Header Background for h1 elements */
