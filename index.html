@@ -1,44 +1,41 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Introduction to Apache Arrow</title>
+    <title>An introduction to Apache Arrow for R users</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Danielle Navarro" />
-    <meta name="date" content="2022-04-17" />
     <script src="libs/header-attrs/header-attrs.js"></script>
-    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
-    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
-    <meta name="description" content="A brief description of the slides"/>
-    <meta name="github-repo" content="djnavarro/slides"/>
-    <meta name="twitter:title" content="Slide title"/>
-    <meta name="twitter:description" content="A brief description of the slides"/>
-    <meta name="twitter:url" content="https://slides.djnavarro.net/SLIDES-NAME"/>
-    <meta name="twitter:image" content="https://slides.djnavarro.net/SLIDES-NAME/img/twitter-image.png"/>
-    <meta name="twitter:image:alt" content=""/>
+    <meta name="github-repo" content="djnavarro/slides-arrow-rladies-sydney"/>
+    <meta name="twitter:title" content="An introduction to Apache Arrow for R users"/>
+    <meta name="twitter:description" content="TBA"/>
+    <meta name="twitter:url" content="https://TBA"/>
+    <meta name="twitter:image" content="https://TBA"/>
+    <meta name="twitter:image:alt" content="Image showing the title slide. The title in white reads &#39;An introduction to Apache Arrow for R users&#39;, with &#39;by Danielle Navarro&#39; immediately underneath. The background is dark green, with the Voltron Data &#39;data lake&#39; image shown in light green below the title, and the company logo shown in light green in the top right corner. The hexagonal form of the &#39;Apache Arrow&#39; logo is shown in the foreground."/>
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:creator" content="@djnavarro"/>
     <meta name="twitter:site" content="@djnavarro"/>
-    <meta property="og:title" content="Slide title"/>
-    <meta property="og:description" content="A brief description of the slides"/>
-    <meta property="og:url" content="https://slides.djnavarro.net/SLIDES-NAME"/>
-    <meta property="og:image" content="https://slides.djnavarro.net/SLIDES-NAME/img/twitter-image.png"/>
-    <meta property="og:image:alt" content=""/>
+    <meta property="og:title" content="An introduction to Apache Arrow for R users"/>
+    <meta property="og:description" content="TBA"/>
+    <meta property="og:url" content="https://TBA"/>
+    <meta property="og:image" content="https://TBA"/>
+    <meta property="og:image:alt" content="Image showing the title slide. The title in white reads &#39;An introduction to Apache Arrow for R users&#39;, with &#39;by Danielle Navarro&#39; immediately underneath. The background is dark green, with the Voltron Data &#39;data lake&#39; image shown in light green below the title, and the company logo shown in light green in the top right corner. The hexagonal form of the &#39;Apache Arrow&#39; logo is shown in the foreground."/>
     <meta property="og:type" content="website"/>
     <meta property="og:locale" content="en_US"/>
     <meta property="article:author" content="Danielle Navarro"/>
-    
-    <!-- plausible analytics -->
-    <!--
-    <script async defer data-domain="slides.djnavarro.net" src="https://plausible.io/js/plausible.js"></script>
-    -->
+    <link href="libs/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="libs/font-awesome/css/v4-shims.css" rel="stylesheet" />
     <link rel="stylesheet" href="style/xaringan-themer.css" type="text/css" />
-    <link rel="stylesheet" href="style/slides-style.css" type="text/css" />
+    <link rel="stylesheet" href="style/voltron-data-style.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 
 
-&lt;!-- Note: At the outset, do a find/replace on "SLIDES-NAME" --&gt;
+
+
+
+
+
+
 
 
 
@@ -47,108 +44,100 @@ layout: true
 
 &lt;div class="my-footer"&gt;
 &lt;span&gt;
-  &lt;!-- &lt;a href="https://slides.djnavarro.net" target="_blank"&gt;slides.djnavarro.net&lt;/a&gt; --&gt;
+  &lt;!-- 
+  You could put a footer link in here, which I used to do for a lot of my
+  other slide decks, but it probably doesn't work well with this theme
+  --&gt;
 &lt;/span&gt;
 &lt;/div&gt; 
 
 ---
 
 
+class: title-slide, theme-green-maximal  &lt;!-- title slide style --&gt;
 
 
+.center[.large[.boldface[An introduction to Apache Arrow for R users]]]  &lt;!-- title, one line --&gt;
 
+.center[.midi[by Danielle Navarro]] &lt;!-- author, one line --&gt;
+.center[.midi[R-Ladies Sydney talk, April 2022]] &lt;!-- general info, one line --&gt;
 
+&lt;img src="img/arrow-logo_hex_black-txt_white-bg.png" width="241" style="display: block; margin: auto;" /&gt;
 
-class: title-slide
+&lt;!--
+font-size classes (relative to normal 100%)
 
-background-image: url("img/voltrondata-wallpaper.png")
-background-size: cover
-
-&lt;img src="img/voltrondata-logo.png" height="50px" align="right"&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-.center[.large[.embolden[Apache Arrow for R users]]]
-.center[.midi[by Danielle Navarro]]
-
----
-
-class: title-slide
-
-&lt;img src="img/voltrondata-logo.png" height="50px" align="right"&gt;
-
-&lt;br&gt;&lt;br&gt;
-
-&lt;img src="img/arrow-logo_hex_black-txt_white-bg.png" width="385" style="display: block; margin: auto;" /&gt;
-
----
-
-class: inverse
-
-&lt;img src="img/voltrondata-logo-dark.png" height="50px" align="right"&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-## What are we going to cover?
-
-- Topic
-- Topic
-- Topic
-
-&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
----
-
-class: inverse
-
-&lt;img src="img/voltrondata-logo-dark.png" height="50px" align="right"&gt;
-
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-## What is the assumed knowledge?
-
-- This is an introductory unit
-- Contains almost no programming content at all
-- Edit this list as needed
+.larger = 200% 
+.large  = 130% 
+.midi   = 85% 
+.small  = 70% 
+.xsmall = 60% 
+.tiny   = 50% 
+--&gt;
 
 
 &lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
 ---
 
-class: inverse
+class: theme-green-maximal
 
-&lt;img src="img/voltrondata-logo-dark.png" height="50px" align="right"&gt;
+## class: theme-green-maximal
 
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
-
-## Where can I find the resources?
-
-- These slides: [slides.djnavarro.net/SLIDES-NAME](https://slides.djnavarro.net/SLIDES-NAME)
-- YouTube videos: [youtube.djnavarro.net/SLIDES-NAME](https://youtube.djnavarro.net/SLIDES-NAME)
+- good for section titles
+- especially with helper classes added
 
 
 
 &lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
 ---
 
-class: middle
+class: theme-green
 
- .pull-left-narrow[   .huge-primary[&lt;span style='color: '&gt;1&lt;/span&gt;] ] .pull-right-wide[    &lt;br&gt;&lt;br&gt;   &lt;div class = "larger embolden primary"&gt;&lt;span style='color: '&gt;Section&lt;/span&gt;&lt;/div&gt; ]
+## class: theme-green
 
+- good for content slides with very little text or code
+- links display in orange, https://arrow.apache.org
+- inline code is light green, `library(arrow)`
 
-&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
----
-
-class: middle, inverse
-
- .pull-left-narrow[   .huge-primary[&lt;span style='color: #005050'&gt;2&lt;/span&gt;] ] .pull-right-wide[    &lt;br&gt;&lt;br&gt;   &lt;div class = "larger embolden primary"&gt;&lt;span style='color: #005050'&gt;Another section&lt;/span&gt;&lt;/div&gt; ]
 
 
 &lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
 ---
 
-class: middle, inverse
+class: theme-green-minimal
 
- &lt;!-- background-image: url("img/voltrondata-wallpaper.png") --&gt; &lt;!-- background-size: cover --&gt; .pull-left-narrow[   .huge-primary[&lt;span style='color: #ffffff'&gt;3&lt;/span&gt;] ] .pull-right-wide[    &lt;br&gt;&lt;br&gt;   &lt;div class = "larger embolden primary"&gt;&lt;span style='color: #ffffff'&gt;One last section&lt;/span&gt;&lt;/div&gt; ]
+## class: theme-green-minimal
+
+- good for content slides with more text or code
+- links display in orange, https://arrow.apache.org
+- inline code is light green, `library(arrow)`
+- code blocks use solarized-dark theme:
+
+
+```r
+runif(1000) |&gt;
+  sqrt() |&gt;
+  quantile(probs = seq(0, 1, .1))
+```
+
+```
+##         0%        10%        20%        30%        40%        50%        60% 
+## 0.01848817 0.32447351 0.45628372 0.55152209 0.63832275 0.71427744 0.77847637 
+##        70%        80%        90%       100% 
+## 0.83779146 0.89754058 0.95964497 0.99965145
+```
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-green-minimal
+
+## class: theme-green-minimal
+
+this is what block quotes look like:
+
+&gt; lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
 
 
 
@@ -156,50 +145,270 @@ class: middle, inverse
 &lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
 ---
 
-class: middle
+class: theme-light
 
+## class: theme-light
 
-.hand[Text in the hand-written style]
-
-- Content
-- Content
-- Content
-
-
-&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
----
-
-class: inverse
-
-.hand[A slide with flair]
-
-
-
-
-&lt;code class ='r hljs remark-code'&gt;"analysis01&lt;span style='background-color:#ffff7f'&gt;_descriptive-statistics&lt;/span&gt;.R"&lt;br&gt;"analysis02&lt;span style='background-color:#ffff7f'&gt;_preregistered-analysis&lt;/span&gt;.R"&lt;br&gt;"notes01&lt;span style='background-color:#ffff7f'&gt;_realising-the-problem&lt;/span&gt;.txt"&lt;br&gt;"analysis03&lt;span style='background-color:#ffff7f'&gt;_departing-from-the-plan&lt;/span&gt;.R"&lt;br&gt;"notes02&lt;span style='background-color:#ffff7f'&gt;_tentative-write-up&lt;/span&gt;.docx"&lt;/code&gt;
+- theme-light mirrors theme-green in structure
+- there is also a theme-light-minimal and theme-light-maximal
+- links display in darker orange, https://arrow.apache.org
+- inline code is darker green, `library(arrow)`
 
 
 
 &lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
 ---
 
-class: middle
+class: theme-light-minimal
 
-background-image: url("img/faint-hearts.png")
-background-size: cover
+## class: theme-light-minimal
 
-.hand[.plainwhite[... and we're done!]]
+.pull-left[
+- pull-left makes a left column
+- pull-right makes a right column
+- code can nest within a column:
+
+```r
+sydney_time &lt;- lubridate::now()
+berlin_time &lt;- sydney_time |&gt; 
+  lubridate::with_tz("Europe/Berlin")
+```
+]
+
+--
+
+.pull-right[
+- handy to show code on the left
+- then reveal results on the right:
+
+```r
+sydney_time
+berlin_time
+```
+
+```
+## [1] "2022-04-05 12:31:38 AEST"
+## [1] "2022-04-05 04:31:38 CEST"
+```
+]
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-dark
+
+## class: theme-dark
+
+- theme-dark, theme-dark-minimal, and theme-dark-maximal
+- links display in orange, https://arrow.apache.org
+- inline code is light green, `library(arrow)`
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-dark
+
+## class: theme-dark
+
+.pull-left-wide[
+- pull-left-wide makes a 70%-width column
+- pull-right-wide makes a 70%-width column
+- pull-left-narrow makes a 30%-width column
+- pull-right-narrow makes a 30%-width column
+]
+
+--
+
+.pull-right-narrow[
+
+```r
+runif(1000) |&gt;
+  sqrt() |&gt;
+  mean()
+```
+
+```
+## [1] 0.6578119
+```
+]
+
+
+---
+
+class: theme-dark-nologo
+
+## class: theme-dark-minimal-nologo
+
+- every theme has a "nologo" version
+- prevents title and logo competing for audience attention
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-green-minimal
+
+## A slide with flair
+
+- the flair package allows fancy code decoration
+- docs: https://r-for-educators.github.io/flair/
+
+
+
+.pull-left-wide[
+&lt;!-- 
+The pull left wide class is used here for aesthetic purposes. It 
+prevents the background colour from the code block extending too 
+far rightwards
+--&gt;
+
+&lt;code class ='r hljs remark-code'&gt;"analysis01&lt;span style='background-color:#000000'&gt;_descriptive-statistics&lt;/span&gt;.R"&lt;br&gt;"analysis02&lt;span style='background-color:#000000'&gt;_preregistered-analysis&lt;/span&gt;.R"&lt;br&gt;"notes01&lt;span style='background-color:#000000'&gt;_realising-the-problem&lt;/span&gt;.txt"&lt;br&gt;"analysis03&lt;span style='background-color:#000000'&gt;_departing-from-the-plan&lt;/span&gt;.R"&lt;br&gt;"notes02&lt;span style='background-color:#000000'&gt;_tentative-write-up&lt;/span&gt;.docx"&lt;/code&gt;
+]
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-green-minimal
+
+## A slide with ggplot2 themes
+
+.pull-left[
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() +
+  labs(
+    x = "engine displacement", 
+    y = "highway mileage",
+    title = "An example plot",
+    subtitle = "Theme based on theme_bw()"
+  ) + 
+  facet_wrap(vars(year)) + 
+  theme_voltron_light()
+```
+]
+
+--
+
+.pull-right[
+![](index_files/figure-html/run-ggplot-example-1.png)&lt;!-- --&gt;
+]
+
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-light-minimal
+
+## A slide with ggplot2 themes
+
+.pull-left[
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() +
+  labs(
+    x = "engine displacement", 
+    y = "highway mileage",
+    title = "An example plot",
+    subtitle = "Theme based on theme_dark()"
+  ) + 
+  facet_wrap(vars(year)) + 
+  theme_voltron_dark()
+```
+]
+
+.pull-right[
+![](index_files/figure-html/run-ggplot-example-light-1.png)&lt;!-- --&gt;
+]
+
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-dark-minimal
+
+## A slide with ggplot2 themes
+
+.pull-left[
+
+```r
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() +
+  labs(
+    x = "engine displacement", 
+    y = "highway mileage",
+    title = "An example plot",
+    subtitle = "Theme based on theme_dark()"
+  ) + 
+  facet_wrap(vars(year)) + 
+  theme_voltron_light()
+```
+]
+
+.pull-right[
+![](index_files/figure-html/run-ggplot-example-dark-1.png)&lt;!-- --&gt;
+]
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-green
+
+## Using font-awesome icons in lists
+
+&lt;!-- 
+embedding raw html is handy for things like using font-awesome icons as
+the bullets in list 
+--&gt;
+&lt;ol class="fa-ul"&gt;
+  &lt;li&gt;&lt;span class="fa-li"&gt;&lt;i class="fas fa-check-square"&gt;&lt;/i&gt;&lt;/span&gt;Completed task&lt;/li&gt;
+  &lt;li&gt;&lt;span class="fa-li"&gt;&lt;i class="fas fa-check-square"&gt;&lt;/i&gt;&lt;/span&gt;Completed task&lt;/li&gt;
+  &lt;li&gt;&lt;span class="fa-li"&gt;&lt;i class="fas fa-spinner fa-pulse"&gt;&lt;/i&gt;&lt;/span&gt;Work in progress&lt;/li&gt;
+  &lt;li&gt;&lt;span class="fa-li"&gt;&lt;i class="far fa-square"&gt;&lt;/i&gt;&lt;/span&gt;Future work&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;!----------------------------- SLIDE BREAK -----------------------------&gt;
+---
+
+class: theme-green-maximal
+
+## Final slide with key points and links
+
+.pull-left[
+- xaringan templates are cool
+- this is a work in progress
+- please send bug reports!
+]
+
+.pull-right[
+&lt;ol class="fa-ul"&gt;
+  &lt;li&gt;&lt;span class="fa-li"&gt;&lt;i class="fa fa-twitter"&gt;&lt;/i&gt;&lt;/span&gt;twitter.com/djnavarro&lt;/li&gt;
+  &lt;li&gt;&lt;span class="fa-li"&gt;&lt;i class="fa fa-github"&gt;&lt;/i&gt;&lt;/span&gt;github.com/djnavarro&lt;/li&gt;
+  &lt;li&gt;&lt;span class="fa-li"&gt;&lt;i class="fa fa-globe"&gt;&lt;/i&gt;&lt;/span&gt;djnavarro.net&lt;/li&gt;
+&lt;/ol&gt;
+]
+
+
+
 
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
-"highlightStyle": "solarized-light",
+"highlightStyle": "solarized-dark",
 "highlightLines": true,
 "countIncrementalSlides": false,
 "ratio": "16:9",
-"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>`"
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc((%current% - 1) / (%total% - 1)* 100%);\">\n  </div>\n</div>"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

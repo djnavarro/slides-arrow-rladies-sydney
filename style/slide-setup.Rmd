@@ -22,42 +22,56 @@ knitr::knit_hooks$set(source = function(x, options) {
   hook_source(x, options)
 })
 
-# number format
-num_fmt <- scales::number_format(big.mark = ",")
+# ensure rmarkdown prints ggplot objects with transparent backgrounds
+knitr::opts_chunk$set(dev.args=list(bg="#00000000"))
 
+# these are the colours used throughout the theme: it's handy to
+# have them accessible from within the R markdown document!
+shades <- list(
+  primary_green = "#005050",
+  accent_green = "#8cffaf",
+  text_white = "#ffffff",
+  text_black = "#000000",
+  accent_dark = "#4f4f4f",
+  accent_light = "#b0b0b0",
+  bg_dark = "#090909",
+  bg_light = "#f6f6f6",
+  contrast_light = "#f97b64",
+  contrast_dark = "#b92307"
+)
 
-# define the section function
-sec_num <- 0
-section <- function() {
-  sec_num <<- sec_num + 1
-  sec_num
+# the voltron light ggplot2 theme complements the green and dark slide themes
+theme_voltron_light <- function(...) {
+  theme_bw() %+replace%
+  theme(
+    plot.background = element_rect(
+      colour = "transparent", 
+      fill = "transparent"
+    ),
+    text = element_text(
+      colour = shades$text_white
+    ), 
+    axis.text = element_text(
+      colour = shades$text_white
+    )
+  )
 }
 
-# define the shade function
-shade <- function(x, col) {
-  paste0("<span style='color: ", col, "'>", x, "</span>")
-}
-
-# define the create_section function
-create_section <- function(title = " ", shade = NULL, image = NULL, lines = 2) {
-  
-  msg <- ""
-  
-  if(!is.null(image)) {
-    msg <- c(msg, paste0('<!-- background-image: url("', image, '") -->'))
-    msg <- c(msg, '<!-- background-size: cover -->')
-  }
-  
-  msg <- c(msg, '.pull-left-narrow[')
-  msg <- c(msg, paste0('  .huge-primary[', shade(section(), shade), ']'))
-  msg <- c(msg, ']')  
-  
-  msg <- c(msg, '.pull-right-wide[')
-  msg <- c(msg, '  ', paste0(rep("<br>", lines), collapse = ""))
-  msg <- c(msg, paste0('  <div class = "larger embolden primary">', shade(title, shade), '</div>'))
-  msg <- c(msg, ']')  
-  
-  return(msg)
+# the voltron dark ggplot2 theme complements the light slide theme
+theme_voltron_dark <- function(...) {
+  theme_dark() %+replace%
+  theme(
+    plot.background = element_rect(
+      colour = "transparent", 
+      fill = "transparent"
+    ),
+    text = element_text(
+      colour = shades$text_black
+    ), 
+    axis.text = element_text(
+      colour = shades$text_black
+    )
+  )
 }
 
 # set seed
@@ -68,7 +82,10 @@ layout: true
 
 <div class="my-footer">
 <span>
-  <!-- <a href="https://slides.djnavarro.net" target="_blank">slides.djnavarro.net</a> -->
+  <!-- 
+  You could put a footer link in here, which I used to do for a lot of my
+  other slide decks, but it probably doesn't work well with this theme
+  -->
 </span>
 </div> 
 
